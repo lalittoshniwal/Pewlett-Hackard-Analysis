@@ -44,3 +44,16 @@ JOIN dept_emp de ON e.emp_no = de.emp_no
 JOIN titles ti ON e.emp_no = ti.emp_no
 WHERE (de.to_date = '9999-1-1') AND (e.birth_date BETWEEN '1965-1-1' AND '1965-12-31')
 ORDER BY emp_no ASC;
+
+-- Total number of retiring employees
+SELECT
+SUM(COUNT)
+FROM
+retiring_titles;
+
+-- Count of mentorship eligible employees
+SELECT
+COUNT(*)
+FROM
+mentorship_eligibility;
+
